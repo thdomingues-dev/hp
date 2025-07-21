@@ -1,8 +1,14 @@
-export const dynamic = 'force-static'
 import { notFound } from 'next/navigation'
-import { getCharacterByNameServer } from '@/features/characters/api/server'
+import { getCharacterByNameServer, getAllCharactersServer } from '@/features/characters/api/server'
 import { CharacterDetailClient } from './CharacterDetailClient'
 import { parseSlug } from '@/features/ui'
+
+export async function generateStaticParams() {
+  const characters = await getAllCharactersServer()
+  return characters
+    .filter(char => char.name)
+    .map(char => ({ name: char.name.toLowerCase().replace(/\s+/g, '-') }))
+}
 
 interface CharacterDetailPageProps {
   params: Promise<{

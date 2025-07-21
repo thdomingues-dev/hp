@@ -1,4 +1,3 @@
-export const dynamic = 'force-static'
 import { getAllHousesServer } from '@/features/houses/api/server'
 import { HousesClient } from './HousesClient'
 

@@ -1,4 +1,3 @@
-export const dynamic = 'force-static'
 import { notFound } from 'next/navigation'
 import { Header, Pagination, EmptyState } from '@/features/ui'
 import { getHouseWithCharactersServer } from '@/features/houses/api/server'
@@ -7,6 +6,11 @@ import { cn, getHouseColors } from '@/features/ui'
 import { LAYOUTS } from '@/features/ui/types/theme'
 import { HouseMembersList } from './HouseMembersList'
 import { getHouseIcon } from '@/features/ui/utils/house'
+
+export async function generateStaticParams() {
+  const houses = ['gryffindor', 'slytherin', 'hufflepuff', 'ravenclaw']
+  return houses.map(house => ({ house }))
+}
 
 interface HousePageProps {
   params: Promise<{ house: string }>
