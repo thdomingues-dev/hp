@@ -6,13 +6,13 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0020-007F, U+00A0-00FF;
 }
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 
-  --font-inter: var(--font-inter);
   --font-cinzel: var(--font-cinzel);
   --font-cinzel-decorative: var(--font-cinzel-decorative);
 }
@@ -38,7 +38,7 @@
   --color-border-secondary: #374151;
   --color-border-dark: #1e293b;
 
-  --font-sans: 'Gill Sans', var(--font-inter), system-ui, sans-serif;
+  --font-sans: 'Gill Sans', system-ui, -apple-system, sans-serif;
   --font-serif: var(--font-cinzel), Georgia, serif;
   --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
   --font-heading: var(--font-cinzel), Georgia, serif;
@@ -88,24 +88,23 @@ body {
 }
 
 .font-harry-potter {
-  font-family: 'Harry Potter', Georgia, serif;
-}
-
-.font-magical {
   font-family: 'Harry Potter', var(--font-cinzel-decorative), fantasy, serif;
+  font-display: swap;
 }
 
 .harry-potter-title {
-  font-family: 'Harry Potter', Georgia, serif;
+  font-family: 'Harry Potter', var(--font-cinzel-decorative), fantasy, serif;
   font-size: clamp(2rem, 5vw, 4rem);
   letter-spacing: 0.05em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-display: swap;
 }
 
 .harry-potter-heading {
-  font-family: 'Harry Potter', Georgia, serif;
+  font-family: 'Harry Potter', var(--font-cinzel-decorative), fantasy, serif;
   letter-spacing: 0.025em;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-display: swap;
 }
 @media print {
   body {
