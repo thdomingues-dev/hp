@@ -14,10 +14,6 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
-  experimental: {
-    optimizeCss: true,
-  },
-
   async headers() {
     return [
       {
@@ -28,6 +24,7 @@ const nextConfig: NextConfig = {
           { key: 'Referrer-Policy', value: 'origin-when-cross-origin' },
         ],
       },
+      // Add font optimization headers
       {
         source: '/fonts/(.*)',
         headers: [
