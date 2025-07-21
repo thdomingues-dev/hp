@@ -47,6 +47,13 @@ const eslintConfig = [
       'no-var': 'error',
     },
   },
+  {
+    files: ['jest.config.js', 'jest.setup.js'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/no-var-requires': 'off',
+    },
+  },
 ]
 
 export default eslintConfig
