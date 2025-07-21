@@ -13,8 +13,8 @@ Explore the magical world of Harry Potter! This project is a modern web applicat
 
 ## 🚀 Technologies
 
-- [Next.js 13+ (App Router)](https://nextjs.org/)
-- React 18+
+- [Next.js 15+ (App Router)](https://nextjs.org/)
+- React 19+
 - TypeScript
 - Tailwind CSS
 - API: [hp-api.onrender.com](https://hp-api.onrender.com/)
