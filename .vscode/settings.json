@@ -12,4 +12,4 @@
   "prettier.configPath": ".prettierrc",
   "eslint.format.enable": true,
   "editor.rulers": [100]
-} 
+}
