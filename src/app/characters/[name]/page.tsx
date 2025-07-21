@@ -1,3 +1,4 @@
+export const dynamic = 'force-static'
 import { notFound } from 'next/navigation'
 import { getCharacterByNameServer } from '@/features/characters/api/server'
 import { CharacterDetailClient } from './CharacterDetailClient'

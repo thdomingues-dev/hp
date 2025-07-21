@@ -1,3 +1,4 @@
+export const dynamic = 'force-static'
 import { getCharactersPaginatedServer } from '@/features/characters/api/server'
 import { CharacterFilter } from '@/features/ui/types/api'
 import { CharactersClient } from './CharactersClient'

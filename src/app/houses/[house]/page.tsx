@@ -1,3 +1,4 @@
+export const dynamic = 'force-static'
 import { notFound } from 'next/navigation'
 import { Header, Pagination, EmptyState } from '@/features/ui'
 import { getHouseWithCharactersServer } from '@/features/houses/api/server'
