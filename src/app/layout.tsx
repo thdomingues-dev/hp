@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { AppProvider } from '@/features/ui/components/AppProvider'
 import { fontVariables } from './fonts'
-import { roboto } from './fonts'
 
 export const metadata: Metadata = {
   title: {
@@ -109,8 +108,15 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fontVariables} ${roboto.variable}`}>
+    <html lang="en" className={fontVariables}>
       <head>
+        <link
+          rel="preload"
+          href="/fonts/HARRYP__.TTF"
+          as="font"
+          type="font/truetype"
+          crossOrigin="anonymous"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
