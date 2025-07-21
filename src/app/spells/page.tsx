@@ -1,4 +1,3 @@
-export const dynamic = 'force-static'
 import { getSpellsPaginatedServer } from '@/features/spells/api/server'
 import { SpellsClient } from './SpellsClient'
 

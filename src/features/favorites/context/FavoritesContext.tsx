@@ -50,26 +50,6 @@ interface FavoritesProviderProps {
 export function FavoritesProvider({ children }: FavoritesProviderProps) {
   const [state, dispatch] = useReducer(favoritesReducer, { favorites: [] })
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const savedFavorites = localStorage.getItem('favoriteCharacters')
-      if (savedFavorites) {
-        try {
-          const parsed = JSON.parse(savedFavorites)
-          dispatch({ type: 'LOAD_FAVORITES', payload: parsed })
-        } catch (error) {
-          console.error('Error parsing favorites from localStorage:', error)
-        }
-      }
-    }
-  }, [])
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('favoriteCharacters', JSON.stringify(state.favorites))
-    }
-  }, [state.favorites])
-
   const addFavorite = (characterName: string) => {
     if (!state.favorites.includes(characterName)) {
       dispatch({ type: 'ADD_FAVORITE', payload: characterName })
@@ -91,6 +71,26 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
       addFavorite(characterName)
     }
   }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedFavorites = localStorage.getItem('favoriteCharacters')
+      if (savedFavorites) {
+        try {
+          const parsed = JSON.parse(savedFavorites)
+          dispatch({ type: 'LOAD_FAVORITES', payload: parsed })
+        } catch (error) {
+          console.error('Error parsing favorites from localStorage:', error)
+        }
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('favoriteCharacters', JSON.stringify(state.favorites))
+    }
+  }, [state.favorites])
 
   return (
     <FavoritesContext.Provider
